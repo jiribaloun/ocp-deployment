@@ -16,11 +16,11 @@ spec:
     - missingkey=error
   template:
     metadata:
-      name: '{{"{{"}}server{{"}}"}}-active-passive'     
+      name: '{{.cluster}}-active-passive'
     spec:
       destination:
         namespace: active-passive
-        server: '{{"{{"}}server{{"}}"}}'
+        server: '{{ .url}}'
       project: default
       source:
         path: .

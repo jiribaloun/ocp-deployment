@@ -21,7 +21,7 @@ spec:
       destination:
         namespace: active-passive
         server: '{{.url}}'
-      project: active-passive
+      project: default
       source:
         path: .
         repoURL: 'https://github.com/jiribaloun/ocp-deployment.git'

@@ -1,0 +1,28 @@
+apiVersion: argoproj.io/v1alpha1
+kind: ApplicationSet
+metadata:
+  name: active-passive-applicationset
+  namespace: active-passive-gitops 
+spec:
+  generators:
+    - list:
+        elements:
+          - cluster: ocp-dc01
+            url: 'https://api.dc01.ocp.lab.hpe.cz:6443'
+          - cluster: ocp-dc02
+            url: 'https://api.dc02.ocp.lab.hpe.cz:6443'
+  goTemplate: true
+  goTemplateOptions:
+    - missingkey=error
+  template:
+    metadata:
+      name: '{{cluster}}-active-passive'
+    spec:
+      destination:
+        namespace: active-passive
+        server: '{{.url}}'
+      project: active-passive
+      source:
+        path: .
+        repoURL: 'https://github.com/jiribaloun/ocp-deployment.git'
+        targetRevision: main

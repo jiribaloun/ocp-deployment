@@ -1,7 +1,7 @@
 apiVersion: argoproj.io/v1alpha1
 kind: ApplicationSet
 metadata:
-  name: active-passive-applicationset
+  name: active-passive-appset
   namespace: active-passive-gitops 
 spec:
   generators:

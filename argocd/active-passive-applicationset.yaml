@@ -23,6 +23,6 @@ spec:
         server: '{{ .url}}'
       project: default
       source:
-        path: .
+        path: ap
         repoURL: 'https://github.com/jiribaloun/ocp-deployment.git'
         targetRevision: main

@@ -5,10 +5,10 @@ metadata:
   namespace: active-passive-gitops 
 spec:
 generators:
-  - clusters:
-     selector:
-       matchLabels:
-         color: "blue"
+- clusters:
+    selector:
+      matchLabels:
+        color: "blue"
   goTemplate: true
   goTemplateOptions:
     - missingkey=error

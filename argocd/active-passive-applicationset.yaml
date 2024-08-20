@@ -7,21 +7,20 @@ spec:
   generators:
   - clusters:
       selector:
-        matchExpressions:
-          - key: color
-            operator: In
-            values:
-              - "blue"       
+        matchLabels:
+          color: 'blue'
+      values:
+        clusterName: '{{.name}}'
   goTemplate: true
   goTemplateOptions:
     - missingkey=error
   template:
     metadata:
-      name: '{{ .color}}-active-passive'
+      name: '{{.values.clusterName}}-active-passive'
     spec:
       destination:
         namespace: bg-rollout
-        server: '{{ .url}}'
+        server: '{{.values.clusterName}}'
       project: default
       source:
         path: bg-rollout

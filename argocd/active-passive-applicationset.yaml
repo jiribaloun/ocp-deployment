@@ -11,6 +11,7 @@ spec:
           color: 'blue'
       values:
         clusterName: '{{.name}}'
+        clusterURL: '{{.url}}'
   goTemplate: true
   goTemplateOptions:
     - missingkey=error
@@ -20,7 +21,7 @@ spec:
     spec:
       destination:
         namespace: bg-rollout
-        server: '{{.values.clusterName}}'
+        server: '{{.values.clusterURL}}'
       project: default
       source:
         path: bg-rollout

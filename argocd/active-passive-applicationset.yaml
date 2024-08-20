@@ -4,15 +4,11 @@ metadata:
   name: active-passive-appset
   namespace: active-passive-gitops 
 spec:
-  generators:
+generators:
   - clusters:
-    selector:
-      matchExpressions:
-        - key: color
-          operator: In
-          values:
-            - "blue"
-            - "green"
+     selector:
+       matchLabels:
+         color: "blue"
   goTemplate: true
   goTemplateOptions:
     - missingkey=error

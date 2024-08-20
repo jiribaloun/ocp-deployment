@@ -8,7 +8,7 @@ spec:
   - clusters:
       selector:
         matchLabels:
-          color: 'blue'
+          color: 'green'
       values:
         clusterName: '{{.name}}'
         clusterURL: '{{.server}}'

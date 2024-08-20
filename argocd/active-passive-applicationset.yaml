@@ -11,7 +11,7 @@ spec:
           color: 'blue'
       values:
         clusterName: '{{.name}}'
-        clusterURL: '{{.url}}'
+        clusterURL: '{{.server}}'
   goTemplate: true
   goTemplateOptions:
     - missingkey=error

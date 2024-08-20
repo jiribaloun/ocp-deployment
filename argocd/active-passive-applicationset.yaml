@@ -17,7 +17,7 @@ spec:
     - missingkey=error
   template:
     metadata:
-      name: '{{.cluster}}-active-passive'
+      name: '{{.color}}-active-passive'
     spec:
       destination:
         namespace: bg-rollout

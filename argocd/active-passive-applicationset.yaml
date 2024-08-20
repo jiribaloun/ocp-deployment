@@ -12,6 +12,7 @@ spec:
             operator: In
             values:
               - "blue"
+              - "green"
       values:
         clusterName: '{{.name}}'
         clusterURL: '{{.server}}'

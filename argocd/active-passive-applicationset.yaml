@@ -5,12 +5,14 @@ metadata:
   namespace: active-passive-gitops 
 spec:
   generators:
-    - list:
-        elements:
-          - cluster: ocp-dc01
-            url: 'https://api.dc01.ocp.lab.hpe.cz:6443'
-          - cluster: ocp-dc02
-            url: 'https://api.dc02.ocp.lab.hpe.cz:6443'
+  - clusters:
+    selector:
+      matchExpressions:
+        - key: color
+          operator: In
+          values:
+            - "blue"
+            - "green"
   goTemplate: true
   goTemplateOptions:
     - missingkey=error

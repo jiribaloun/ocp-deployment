@@ -8,11 +8,11 @@ spec:
   - clusters:
       selector:
         matchExpressions:
-          - key: color
+          - key: location
             operator: In
             values:
-              - "blue"
-              - "green"
+              - "BAR"
+              - "TOR"
       values:
         clusterName: '{{.name}}'
         clusterURL: '{{.server}}'

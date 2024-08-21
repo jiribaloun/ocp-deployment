@@ -15,7 +15,7 @@ spec:
       values:
         clusterName: '{{.name}}'
         clusterURL: '{{.server}}'
-        OCPlocation: '{{.location}}' 
+        OCPlocation: '{{metadata.labels.location}}' 
   goTemplate: true
   goTemplateOptions:
     - missingkey=error

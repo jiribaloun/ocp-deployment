@@ -15,13 +15,13 @@ spec:
       values:
         clusterName: '{{.name}}'
         clusterURL: '{{.server}}'
-        location: '{{ .labels.location}}' 
+        OCPlocation: '{{ .location}}' 
   goTemplate: true
   goTemplateOptions:
     - missingkey=error
   template:
     metadata:
-      name: '{{.values.clusterName}}-{{.values.location}}-active-passive'
+      name: '{{.values.clusterName}}-{{.values.OCPlocation}}-active-passive'
     spec:
       destination:
         namespace: bg-rollout

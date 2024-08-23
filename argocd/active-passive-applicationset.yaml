@@ -8,7 +8,7 @@ spec:
   - clusters:
       selector:
         matchExpressions:
-          - key: LocaTion
+          - key: location
             operator: In
             values:
               - "TOR"
@@ -16,7 +16,7 @@ spec:
       values:
         clusterName: '{{.name}}'
         clusterURL: '{{.server}}'
-        OCPlocation: '{{.metadata.labels.LocaTion}}' 
+        OCPlocation: '{{.metadata.labels.location}}' 
   goTemplate: true
   goTemplateOptions:
     - missingkey=error

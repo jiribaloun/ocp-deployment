@@ -11,8 +11,8 @@ spec:
           - key: location
             operator: In
             values:
-              - "TOR"
-              - "BAR"
+              - "tor"
+              - "bar"
       values:
         clusterName: '{{.name}}'
         clusterURL: '{{.server}}'

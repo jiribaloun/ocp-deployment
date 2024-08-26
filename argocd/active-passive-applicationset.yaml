@@ -14,8 +14,8 @@ spec:
               - "TOR"
               - "BAR"
       values:
-        clusterName: '{{.data.name}}'
-        clusterURL: '{{.data.server}}'
+        clusterName: '{{data.name}}'
+        clusterURL: '{{data.server}}'
         OCPlocation: '{{.metadata.labels.LocaTion}}' 
   goTemplate: true
   goTemplateOptions:

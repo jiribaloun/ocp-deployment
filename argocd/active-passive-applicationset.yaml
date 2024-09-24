@@ -32,3 +32,6 @@ spec:
         path: bg-rollout
         repoURL: 'https://github.com/jiribaloun/ocp-deployment.git'
         targetRevision: main
+      syncPolicy:
+        automated:
+          prune: true

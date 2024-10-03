@@ -1,1 +1,37 @@
-
+kind: PersistentVolume
+apiVersion: v1
+metadata:
+  name: nfs-bg-rollout-pv
+  namespace: bg-rollout
+  annotations:
+spec:
+  capacity:
+    storage: '1'
+  nfs:
+    server: h04nfs00.ocp.lab.hpe.cz
+    path: /app/gluster/ocp-lab-dc01/rollout-bluegreen-pod
+  accessModes:
+    - ReadWriteMany
+  claimRef:
+    kind: PersistentVolumeClaim
+    namespace: bg-rollout
+    name: nfs-bg-rollout-pvc
+  persistentVolumeReclaimPolicy: Retain
+  storageClassName: nfs-client
+  volumeMode: Filesystem
+---
+kind: PersistentVolumeClaim
+apiVersion: v1
+metadata:
+  annotations:
+  name: nfs-bg-rollout-pvc
+  namespace: bg-rollout
+spec:
+  accessModes:
+    - ReadWriteMany
+  resources:
+    requests:
+      storage: '1'
+  volumeName: nfs-bg-rollout-pv
+  storageClassName: nfs-client
+  volumeMode: Filesystem

@@ -18,18 +18,3 @@ spec:
   persistentVolumeReclaimPolicy: Retain
   storageClassName: nfs-client
   volumeMode: Filesystem
----
-kind: PersistentVolumeClaim
-apiVersion: v1
-metadata:
-  annotations:
-  name: nfs-bg-rollout-pvc
-spec:
-  accessModes:
-    - ReadWriteMany
-  resources:
-    requests:
-      storage: '1'
-  volumeName: nfs-bg-rollout-pv
-  storageClassName: nfs-client
-  volumeMode: Filesystem

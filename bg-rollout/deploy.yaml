@@ -14,7 +14,7 @@ spec:
         app: rollout-bluegreen
     spec:
       containers:
-      - image: argoproj/rollouts-demo:red
+      - image: nginx:alpine
         imagePullPolicy: Always
         name: rollouts-demo
         ports:

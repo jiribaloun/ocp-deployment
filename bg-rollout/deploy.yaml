@@ -23,7 +23,7 @@ spec:
         terminationMessagePath: /dev/termination-log
         terminationMessagePolicy: File
       volumeMounts:
-        - mountPath: '/mnt'
+        - mountPath: '/data'
           name: nfs-bg-rollout-mnt
       volumes:
       - name: nfs-bg-rollout-mnt

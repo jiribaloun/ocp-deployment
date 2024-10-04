@@ -14,7 +14,7 @@ spec:
         app: rollout-bluegreen
     spec:
       containers:
-      - image: argoproj/rollouts-demo:blue
+      - paulczar/petclinic:spring-k8s-1
         imagePullPolicy: Always
         name: rollouts-demo
         ports:

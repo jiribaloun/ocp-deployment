@@ -24,9 +24,9 @@ spec:
         terminationMessagePolicy: File
       volumeMounts:
         - mountPath: '/mnt'
-          name: nfs-bg-rollout-pv
+          name: nfs-bg-rollout-mnt
       volumes:
-      - name: nfs-bg-rollout-pv
+      - name: nfs-bg-rollout-mnt
         persistentVolumeClaim:
           claimName: nfs-bg-rollout-pvc            
       dnsPolicy: ClusterFirst
